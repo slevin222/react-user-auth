@@ -1,5 +1,5 @@
 {
-  "name": "react user auth",
+  "name": "react-user-auth",
   "version": "1.0.0",
   "description": "Basic user auth in React with Redux",
   "main": "index.js",
