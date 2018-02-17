@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Nav = props => {
     return (
-        <nav className="blue-grey darker-1">
+        <nav className="amber darken-2">
             <Link style={{ marginLeft: '1%' }} to="/" className="brand-logo">Movie Quotes</Link >
             <ul className="right">
                 <li>
