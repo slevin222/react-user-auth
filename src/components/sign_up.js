@@ -14,7 +14,7 @@ class SignUp extends Component {
 
 
     render() {
-        const { handleSubmit } = this.props;
+        const { handleSubmit, authError } = this.props;
         return (
             <div>
                 <h1 className="center-align">Sign Up</h1>
@@ -27,6 +27,7 @@ class SignUp extends Component {
                                     <Field component={renderInput} name="password" placeholder="Choose a password" type="password" />
                                     <Field component={renderInput} name="confirmPassword" placeholder="Confirm password" type="password" />
                                     <button className="btn amber darken-2">Sign Up</button>
+                                    <p className="red-text center-align">{authError}</p>
                                 </form>
                             </div>
                         </div>
@@ -58,4 +59,10 @@ SignUp = reduxForm({
     validate: validate
 })(SignUp);
 
-export default connect(null, { signUp })(SignUp);
+function mapStateToProps(state) {
+    return {
+        authError: state.user.error
+    }
+}
+
+export default connect(mapStateToProps, { signUp })(SignUp);
