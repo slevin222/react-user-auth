@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getQuote } from '../actions';
 
-export default props => {
-    return (
-        <div className="center-align">
-            <h1>Here is a Movie quote:</h1>
+class Quotes extends Component {
 
-        </div>
-    )
+    componentDidMount() {
+        this.props.getQuote();
+    }
+
+    render() {
+        return (
+            <div className="center-align">
+                <h1>Here is a Movie quote:</h1>
+                <h3>{this.props.quote}</h3>
+                <button onClick={this.props.getQuote} className="btn amber darken-2">Next Quote</button>
+            </div>
+        )
+    }
 }
+
+function mapStateToProps(state) {
+    return {
+        quote: state.movie.quote
+    }
+}
+
+export default connect(mapStateToProps, { getQuote })(Quotes);
