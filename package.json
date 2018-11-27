@@ -17,6 +17,8 @@
   "dependencies": {
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
+    "deep-extend": "^0.6.0",
+    "fresh": "^0.5.2",
     "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
